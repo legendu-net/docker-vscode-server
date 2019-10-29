@@ -1,10 +1,10 @@
 #!/bin/bash
 
-/usr/bin/code-server \
+export PASSWORD="$DOCKER_PASSWORD" && /usr/bin/code-server \
     --port 8080 \
-    --user-data-dir /workdir/data \
-    --extensions-dir /workdir/extensions \
+    --user-data-dir /config/data \
+    --extensions-dir /config/extensions \
     --disable-telemetry \
     --disable-updates \
-    --auth "${DOCKER_PASSWORD}" \
+    --auth password \
     /workdir/workspace
