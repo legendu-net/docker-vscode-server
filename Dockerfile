@@ -7,4 +7,5 @@ RUN apt-get update \
     && tar -zxf /tmp/code.tar.gz -C /usr/bin/ --strip-components=1 --wildcards code-server*/code-server \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
+COPY scripts/ /scripts/
 EXPOSE 8080
