@@ -14,5 +14,6 @@ for f in $(ls /scripts/config/[0-9][0-9][0-9]-*.sh); do
     source $f
 done
 
+export HOME=/home/$DOCKER_USER  # critical for it to work!
 su -m $DOCKER_USER -c /scripts/sys/launch.sh
 #source /scripts/sys/launch.sh
