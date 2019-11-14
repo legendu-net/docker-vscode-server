@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-xinstall ipython3 -c
+su -m $DOCKER_USER -c "xinstall ipython3 -c"
