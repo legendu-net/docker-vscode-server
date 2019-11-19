@@ -1,4 +1,4 @@
-FROM dclong/python
+FROM dclong/jupyter
 
 RUN mkdir -p /config/ && chmod 777 /config \
     && apt-get update \
