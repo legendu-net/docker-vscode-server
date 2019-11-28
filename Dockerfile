@@ -1,4 +1,4 @@
-FROM dclong/jupyter
+FROM dclong/jupyter-jdk
 
 RUN mkdir -p /config/ && chmod 777 /config \
     && apt-get update \
