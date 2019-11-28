@@ -45,6 +45,8 @@ docker run -d \
     dclong/vscode-server
 ```
 
+## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
+
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
 ## [Known Issues](http://www.legendu.net/en/blog/my-docker-images/#known-issues)
