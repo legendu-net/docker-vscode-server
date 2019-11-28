@@ -8,4 +8,5 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 COPY scripts/ /scripts/
+ENV SHELL=/bin/bash
 EXPOSE 8080
