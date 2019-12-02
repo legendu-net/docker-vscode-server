@@ -7,8 +7,6 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && tar -zxf /tmp/code.tar.gz -C /usr/bin/ --strip-components=1 --wildcards code-server*/code-server \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
     
-RUN code-server --install-extension ms-python.python
-
 COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
 EXPOSE 8080
