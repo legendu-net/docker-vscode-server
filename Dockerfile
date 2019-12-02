@@ -6,6 +6,8 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && curl -L "https://github.com/cdr/code-server/releases/download/${CODE_RELEASE}/code-server${CODE_RELEASE}-linux-x86_64.tar.gz" -o /tmp/code.tar.gz \
     && tar -zxf /tmp/code.tar.gz -C /usr/bin/ --strip-components=1 --wildcards code-server*/code-server \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+    
+RUN code-server --install-extension ms-python.python
 
 COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
