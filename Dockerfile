@@ -1,7 +1,5 @@
 FROM dclong/jupyter-jdk
 
-RUN xinstall dsutil -ic
-
 RUN mkdir -p /config/ && chmod 777 /config \
     && apt-get update \
     && CODE_RELEASE=$(curl -sX GET "https://api.github.com/repos/cdr/code-server/releases/latest" | awk '/tag_name/{print $4;exit}' FS='[""]') \
