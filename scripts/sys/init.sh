@@ -10,7 +10,9 @@ DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
 gpasswd -a $DOCKER_USER sudo
 
 export HOME=/home/$DOCKER_USER  # critical for it to work!
-/scripts/sys/etc.sh
+/scripts/sys/etc.sh pre
 
-su -m $DOCKER_USER -c /scripts/sys/launch.sh
+su -m $DOCKER_USER -c /scripts/sys/launch.sh &
 #source /scripts/sys/launch.sh
+
+/scripts/sys/etc.sh post
