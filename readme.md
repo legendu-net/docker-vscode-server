@@ -1,6 +1,6 @@
 # dclong/vscode-server [@DockerHub](https://hub.docker.com/r/dclong/vscode-server/) | [@GitHub](https://github.com/dclong/docker-vscode-server)
 
-Visual Studio Code server.
+Visual Studio Code server in Docker.
 
 ## Usage in Linux/Unix
 
