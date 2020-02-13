@@ -29,6 +29,20 @@ docker run -d \
     -v $(dirname $HOME):/home_host \
     dclong/vscode-server /scripts/sys/init.sh
 ```
+Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
+```
+docker run -d \
+    --hostname vscode-server \
+    --log-opt max-size=50m \
+    -p 8080:8080 \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
+    dclong/vscode-server:next /scripts/sys/init.sh
+```
 The following command (*only works on Linux*) does the same as the above one 
 except that it limits the use of CPU and memory.
 ```
@@ -46,7 +60,22 @@ docker run -d \
     -v $(dirname $HOME):/home_host \
     dclong/vscode-server /scripts/sys/init.sh
 ```
-
+Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
+```
+docker run -d \
+    --hostname vscode-server \
+    --log-opt max-size=50m \
+    --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
+    --cpus=$(($(nproc) - 1)) \
+    -p 8080:8080 \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
+    dclong/vscode-server:next /scripts/sys/init.sh
+```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
