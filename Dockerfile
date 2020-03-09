@@ -6,6 +6,7 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && tar -zxf /tmp/code.tar.gz -C /usr/bin/ --strip-components=1 --wildcards code-server*/code-server \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
+    && code-server --install-extension vscodevim.vim \
     && chmod -R 777 /root \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
     
