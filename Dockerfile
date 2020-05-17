@@ -10,6 +10,7 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension vscodevim.vim \
+    && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.6.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && chmod -R 777 /root \
