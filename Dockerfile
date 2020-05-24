@@ -8,6 +8,7 @@ RUN mkdir -p /config/ && chmod 777 /config \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
+    && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.6.vsix \
