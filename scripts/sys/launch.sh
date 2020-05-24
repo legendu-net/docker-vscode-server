@@ -6,4 +6,4 @@ export PASSWORD="$DOCKER_PASSWORD" && /usr/bin/code-server \
     --extensions-dir /root/.local/share/code-server/extensions \
     --disable-telemetry \
     --auth password \
-    /workdir/workspace
+    /workdir/
