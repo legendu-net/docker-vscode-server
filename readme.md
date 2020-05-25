@@ -25,8 +25,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server /scripts/sys/init.sh
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
@@ -39,8 +39,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server:next /scripts/sys/init.sh
 ```
 The following command (*only works on Linux*) does the same as the above one 
@@ -56,8 +56,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server /scripts/sys/init.sh
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
@@ -72,8 +72,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server:next /scripts/sys/init.sh
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
