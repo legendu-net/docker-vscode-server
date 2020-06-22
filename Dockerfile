@@ -1,5 +1,6 @@
 FROM dclong/jupyter-nodejs
 
+COPY scripts/ /scripts/
 RUN mkdir -p /config/data/User/ && chmod 777 -R /config \
     && apt-get update \
     && curl -L http://www.legendu.net/media/github_release.py | python3 - cdr/code-server -k amd64.deb -o /tmp/code.deb \                                                                                             
@@ -14,7 +15,6 @@ RUN mkdir -p /config/data/User/ && chmod 777 -R /config \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && chmod -R 777 /root \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-COPY scripts/ /scripts/
 COPY settings/ /config/data/User/
 ENV SHELL=/bin/bash
 EXPOSE 8080
