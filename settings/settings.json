@@ -1,0 +1,5 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "autoDocstring.docstringFormat": "sphinx"
+}
