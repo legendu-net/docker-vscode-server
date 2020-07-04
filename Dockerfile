@@ -10,7 +10,7 @@ RUN apt-get update \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
-    && code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
+    #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && chmod -R 777 /root \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
