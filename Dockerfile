@@ -1,8 +1,7 @@
 FROM dclong/jupyter-nodejs
 
 COPY scripts/ /scripts/
-RUN mkdir -p /config/data/User/ && chmod 777 -R /config \
-    && apt-get update \
+RUN apt-get update \
     && curl -L http://www.legendu.net/media/github_release.py | python3 - cdr/code-server -k amd64.deb -o /tmp/code.deb \                                                                                             
     #&& curl -L https://github.com/cdr/code-server/releases/download/v3.3.1/code-server_3.3.1_amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
@@ -16,5 +15,6 @@ RUN mkdir -p /config/data/User/ && chmod 777 -R /config \
     && chmod -R 777 /root \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 COPY settings/ /config/data/User/
+RUN chmod 777 -R /config/
 ENV SHELL=/bin/bash
 EXPOSE 8080
