@@ -7,8 +7,6 @@ RUN apt-get update \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python@2020.5.86806 \
-    #&& curl -sSL https://github.com/microsoft/vscode-python/releases/download/2020.5.86806/ms-python-release.vsix -o /scripts/ms-python-release.vsix \
-    #&& code-server --install-extension /scripts/ms-python-release.vsix \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
