@@ -1,6 +1,7 @@
 FROM dclong/jupyter-nodejs
 
 COPY scripts/ /scripts/
+RUN pip3 install git+https://github.com/dclong/dsutil@master
 RUN apt-get update \
     && curl -sSL http://www.legendu.net/media/github_release.py | python3 - cdr/code-server -k amd64.deb -o /tmp/code.deb \                                                                                             
     #&& curl -L https://github.com/cdr/code-server/releases/download/v3.3.1/code-server_3.3.1_amd64.deb -o /tmp/code.deb \
