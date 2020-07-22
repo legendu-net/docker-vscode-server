@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.detectIndentation": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
