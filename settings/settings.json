@@ -1,6 +1,16 @@
 {
+    "editor.fontSize": 12,
+    "editor.detectIndentation": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "autoDocstring.docstringFormat": "sphinx",
+    "keyboard.dispatch": "keyCode",
+    "workbench.startupEditor": "newUntitledFile",
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=numpy,cv2,pyspark",
+        "--generated-members=cv2.*,pyspark.*",
+        "--ignored-modules=pyspark.sql.functions"
+    ],
     "extensions.autoUpdate": false
 }
