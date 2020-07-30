@@ -16,8 +16,7 @@ RUN apt-get update \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --dst-dir /config/data/User/ \
-    && chmod -R 777 /root \
+    && chmod -R 777 /root /config \
     && rm -rf /scripts/*.vsix /tmp/* /var/lib/apt/lists/* /var/tmp/*
-RUN chmod 777 -R /config/
 ENV SHELL=/bin/bash
 EXPOSE 8080
