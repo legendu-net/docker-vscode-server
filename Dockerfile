@@ -15,9 +15,8 @@ RUN apt-get update \
     && code-server --install-extension bungcip.better-toml \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
-    && chmod -R 777 /root \
+    && xinstall vscode -c --dst-dir /config/data/User/ \
+    && chmod -R 777 /root /config \
     && rm -rf /scripts/*.vsix /tmp/* /var/lib/apt/lists/* /var/tmp/*
-COPY settings/ /config/data/User/
-RUN chmod 777 -R /config/
 ENV SHELL=/bin/bash
 EXPOSE 8080
