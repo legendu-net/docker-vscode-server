@@ -9,7 +9,7 @@ RUN apt-get update \
     #&& curl -L https://github.com/cdr/code-server/releases/download/v3.3.1/code-server_3.3.1_amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
-    && code-server --install-extension ms-python.python@2020.5.86806 \
+    && code-server --install-extension ms-python.python \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
