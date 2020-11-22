@@ -13,6 +13,7 @@ RUN apt-get update \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
+    && code-server --install-extension usernamehw.errorlens \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --dst-dir /config/data/User/ \
