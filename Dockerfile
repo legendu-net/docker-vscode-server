@@ -1,9 +1,9 @@
 # NAME: dclong/vscode-server
-FROM dclong/jupyter-nodejs
-# GIT: https://github.com/dclong/docker-jupyter-nodejs.git
+FROM dclong/jupyterhub-jdk
+# GIT: https://github.com/dclong/docker-jupyterhub-jdk.git
 
 COPY scripts/ /scripts/
-RUN pip3 install git+https://github.com/dclong/dsutil@master
+RUN pip3 install git+https://github.com/dclong/dsutil@main
 RUN apt-get update \
     && curl -sSL http://www.legendu.net/media/github_release.py | python3 - cdr/code-server -k amd64.deb -o /tmp/code.deb \                                                                                             
     #&& curl -L https://github.com/cdr/code-server/releases/download/v3.3.1/code-server_3.3.1_amd64.deb -o /tmp/code.deb \
@@ -13,6 +13,7 @@ RUN apt-get update \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
+    && code-server --install-extension usernamehw.errorlens \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --dst-dir /config/data/User/ \
