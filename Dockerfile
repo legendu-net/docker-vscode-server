@@ -1,6 +1,6 @@
 # NAME: dclong/vscode-server
-FROM dclong/jupyterhub-jdk
-# GIT: https://github.com/dclong/docker-jupyterhub-jdk.git
+FROM dclong/jupyterhub-more
+# GIT: https://github.com/dclong/docker-jupyterhub-more.git
 
 COPY scripts/ /scripts/
 RUN pip3 install git+https://github.com/dclong/dsutil@main
