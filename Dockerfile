@@ -15,6 +15,7 @@ RUN apt-get update \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension rust-lang.rust \
     && code-server --install-extension vscjava.vscode-java-pack \
+    && code-server --install-extension fwcd.kotlin \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --dst-dir /config/data/User/ \
