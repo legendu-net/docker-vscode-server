@@ -5,12 +5,12 @@ FROM dclong/jupyterhub-more
 COPY scripts/ /scripts/
 RUN pip3 install git+https://github.com/dclong/dsutil@main
 RUN apt-get update \
-    && xinstall github -r cdr/code-server -v 3.7.3 -k amd64.deb -o /tmp/code.deb \
+    && xinstall github -r cdr/code-server -v "<3.8.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension njpwerner.autodocstring \
-    && code-server --install-extension vscodevim.vim \
+    #&& code-server --install-extension vscodevim.vim@1.18.3 \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension rust-lang.rust \
