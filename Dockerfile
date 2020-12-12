@@ -10,7 +10,7 @@ RUN apt-get update \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension njpwerner.autodocstring \
-    && code-server --install-extension vscodevim.vim \
+    && code-server --install-extension vscodevim.vim@1.18.3 \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension rust-lang.rust \
