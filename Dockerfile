@@ -21,6 +21,6 @@ RUN apt-get update \
     && xinstall vscode -c --dst-dir /config/data/User/ \
     && chmod -R 777 /root /config \
     && rm -rf /scripts/*.vsix /tmp/* /var/lib/apt/lists/* /var/tmp/*
-RUN code-server --install-extension /scripts/vscodevim.vim-1.16.0.vsix
+RUN code-server --install-extension /scripts/vscodevim.vim-1.16.0.vsix || ls /scripts/
 ENV SHELL=/bin/bash
 EXPOSE 8080
