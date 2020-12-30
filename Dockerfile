@@ -11,7 +11,6 @@ RUN apt-get update \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension njpwerner.autodocstring \
     #&& code-server --install-extension vscodevim.vim@1.18.3 \
-    && code-server --install-extension /scripts/vscodevim.vim-1.16.0.vsix \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension rust-lang.rust \
@@ -22,5 +21,6 @@ RUN apt-get update \
     && xinstall vscode -c --dst-dir /config/data/User/ \
     && chmod -R 777 /root /config \
     && rm -rf /scripts/*.vsix /tmp/* /var/lib/apt/lists/* /var/tmp/*
+RUN code-server --install-extension /scripts/vscodevim.vim-1.16.0.vsix
 ENV SHELL=/bin/bash
 EXPOSE 8080
