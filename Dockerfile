@@ -2,7 +2,6 @@
 FROM dclong/jupyterhub-more
 # GIT: https://github.com/dclong/docker-jupyterhub-more.git
 
-COPY scripts/ /scripts/
 RUN pip3 install git+https://github.com/dclong/dsutil@main
 RUN apt-get update \
     && xinstall github -r cdr/code-server -v ">=3.8.0,<3.9.0" -k amd64.deb -o /tmp/code.deb \
@@ -10,7 +9,7 @@ RUN apt-get update \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python@2020.10.332292344 \
     && code-server --install-extension njpwerner.autodocstring \
-    #&& code-server --install-extension vscodevim.vim@1.18.3 \
+    && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension rust-lang.rust \
@@ -20,8 +19,7 @@ RUN apt-get update \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --dst-dir /config/data/User/ \
     && chmod -R 777 /root /config \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-RUN code-server --install-extension /scripts/vscodevim.vim-1.16.0.vsix || ls /scripts/ \
-    && rm -rf /scripts/*.vsix
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /scripts/*.vsix
+COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
 EXPOSE 8080
