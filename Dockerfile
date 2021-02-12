@@ -17,7 +17,7 @@ RUN apt-get update \
     && code-server --install-extension fwcd.kotlin \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
-    && xinstall vscode -c --config-dir /etc/vscode/data/User/ \
+    && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
     && chmod -R 777 /root /config \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
 COPY scripts/ /scripts/
