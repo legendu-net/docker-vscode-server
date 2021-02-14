@@ -18,7 +18,7 @@ RUN apt-get update \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
-    && chmod -R 777 /root /config \
+    && chmod -R 777 /root /etc/vscode \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
 COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
