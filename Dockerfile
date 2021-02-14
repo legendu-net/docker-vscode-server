@@ -4,7 +4,7 @@ FROM dclong/jupyterhub-more
 
 RUN pip3 install git+https://github.com/dclong/dsutil@main
 RUN apt-get update \
-    && xinstall github -r cdr/code-server -v ">=3.8.0,<3.9.0" -k amd64.deb -o /tmp/code.deb \
+    && xinstall github -r cdr/code-server -v ">=3.8.0,<3.10.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python@2020.10.332292344 \
