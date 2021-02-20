@@ -25,6 +25,7 @@ docker run -d --init \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server /scripts/sys/init.sh
@@ -39,6 +40,7 @@ docker run -d --init \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server:next /scripts/sys/init.sh
@@ -56,6 +58,7 @@ docker run -d --init \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server /scripts/sys/init.sh
@@ -72,6 +75,7 @@ docker run -d --init \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
     dclong/vscode-server:next /scripts/sys/init.sh
