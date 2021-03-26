@@ -6,5 +6,4 @@ export PASSWORD="$DOCKER_PASSWORD" && /usr/bin/code-server \
     --extensions-dir /root/.local/share/code-server/extensions \
     --disable-telemetry \
     --auth password \
-    --home https://github.com/dclong/docker-vscode-server \
     /workdir/
