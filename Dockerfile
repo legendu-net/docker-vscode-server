@@ -7,7 +7,7 @@ RUN apt-get update \
     && xinstall github -r cdr/code-server -v ">=3.8.0,<3.10.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
-    && code-server --install-extension ms-python.python \
+    && code-server --install-extension ms-python.python@2020.10.332292344 \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension vscodevim.vim \
     && code-server --install-extension bungcip.better-toml \
