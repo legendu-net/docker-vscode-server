@@ -2,7 +2,8 @@
 FROM dclong/jupyterhub-more
 # GIT: https://github.com/dclong/docker-jupyterhub-more.git
 
-RUN pip3 install git+https://github.com/dclong/dsutil@main
+RUN pip3 install git+https://github.com/dclong/dsutil@main \
+    && /scripts/sys/purge_cache.sh 
 RUN apt-get update \
     && xinstall github -r cdr/code-server -v ">=3.8.0,<3.12.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
@@ -20,7 +21,7 @@ RUN apt-get update \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
     && chmod -R 777 /root /etc/vscode \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* 
+    && /scripts/sys/purge_cache.sh
 COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
 EXPOSE 8080
