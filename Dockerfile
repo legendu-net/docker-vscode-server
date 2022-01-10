@@ -5,7 +5,7 @@ FROM dclong/jupyterhub-more
 RUN pip3 install git+https://github.com/dclong/dsutil@main \
     && /scripts/sys/purge_cache.sh 
 RUN apt-get update \
-    && xinstall github -r cdr/code-server -v ">=3.8.0,<4.1.0" -k amd64.deb -o /tmp/code.deb \
+    && xinstall github -r cdr/code-server -v ">=3.8.0,<3.13.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension ms-python.python \
