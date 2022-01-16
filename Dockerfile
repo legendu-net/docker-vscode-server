@@ -7,16 +7,15 @@ RUN pip3 install git+https://github.com/dclong/dsutil@main \
 RUN apt-get update \
     && xinstall github -r cdr/code-server -v ">=3.8.0,<3.13.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
-    && code-server --install-extension formulahendry.terminal \
-    && code-server --install-extension ms-python.python \
-    && code-server --install-extension njpwerner.autodocstring \
-    && code-server --install-extension vscodevim.vim \
-    && code-server --install-extension bungcip.better-toml \
-    && code-server --install-extension usernamehw.errorlens \
-    && code-server --install-extension matklad.rust-analyzer \
-    && code-server --install-extension vadimcn.vscode-lldb \
-    && code-server --install-extension vscjava.vscode-java-pack \
-    && code-server --install-extension fwcd.kotlin mechatroner.rainbow-csv \
+    && code-server --install-extension \
+        formulahendry.terminal \
+        ms-python.python njpwerner.autodocstring \
+        vscjava.vscode-java-pack fwcd.kotlin \
+        matklad.rust-analyzer vadimcn.vscode-lldb \
+        vscodevim.vim \
+        bungcip.better-toml \
+        usernamehw.errorlens \
+        mechatroner.rainbow-csv \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
