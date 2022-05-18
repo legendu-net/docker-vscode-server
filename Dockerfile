@@ -1,6 +1,6 @@
 # NAME: dclong/vscode-server
 FROM dclong/jupyterhub-more
-# GIT: https://github.com/dclong/docker-jupyterhub-more.git
+# GIT: https://github.com/legendu-net/docker-jupyterhub-more.git
 
 RUN pip3 install git+https://github.com/dclong/dsutil@main \
     && /scripts/sys/purge_cache.sh 
