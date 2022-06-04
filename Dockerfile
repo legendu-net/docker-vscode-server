@@ -2,7 +2,7 @@
 FROM dclong/jupyterhub-more
 # GIT: https://github.com/legendu-net/docker-jupyterhub-more.git
 
-RUN pip3 install git+https://github.com/dclong/dsutil@main \
+RUN pip3 install aiutil \
     && /scripts/sys/purge_cache.sh 
 RUN apt-get update \
     && xinstall from_github -r cdr/code-server -v ">=3.8.0,<4.5.0" -k amd64.deb -o /tmp/code.deb \
