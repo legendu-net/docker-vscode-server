@@ -13,6 +13,7 @@ RUN apt-get update \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension ms-python.python \
+    && code-server --install-extension golang.Go \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension matklad.rust-analyzer \
     && code-server --install-extension vadimcn.vscode-lldb \
