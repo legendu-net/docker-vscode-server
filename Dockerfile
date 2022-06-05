@@ -13,6 +13,7 @@ RUN apt-get update \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension ms-python.python \
+    && code-server --install-extension golang.Go \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension matklad.rust-analyzer \
     && code-server --install-extension vadimcn.vscode-lldb \
@@ -21,7 +22,7 @@ RUN apt-get update \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
-    && chmod -R 777 /root /etc/vscode \
+    && chmod -R 777 /root/ /etc/vscode/ \
     && /scripts/sys/purge_cache.sh
 COPY scripts/ /scripts/
 ENV SHELL=/bin/bash
