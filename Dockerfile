@@ -5,7 +5,7 @@ FROM dclong/jupyterhub-more
 RUN pip3 install aiutil \
     && /scripts/sys/purge_cache.sh 
 RUN apt-get update \
-    && xinstall from_github -r cdr/code-server -v ">=3.8.0,<4.5.0" -k amd64.deb -o /tmp/code.deb \
+    && icon from_github -r cdr/code-server -v ">=3.8.0,<4.5.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension vscodevim.vim@1.20.3 \
@@ -21,7 +21,7 @@ RUN apt-get update \
     && code-server --install-extension fwcd.kotlin \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
-    && xinstall vscode -c --user-dir /etc/vscode/data/User/ \
+    && icon vscode -c --user-dir /etc/vscode/data/User/ \
     && chmod -R 777 /root/ /etc/vscode/ \
     && /scripts/sys/purge_cache.sh
 COPY scripts/ /scripts/
