@@ -25,5 +25,6 @@ RUN apt-get update && apt-get install -y valgrind \
     && chmod -R 777 /root/ /etc/vscode/ \
     && /scripts/sys/purge_cache.sh
 COPY scripts/ /scripts/
+COPY settings/sysctl.conf /etc/sysctl.conf
 ENV SHELL=/bin/bash
 EXPOSE 8080
