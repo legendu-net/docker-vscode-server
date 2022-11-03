@@ -31,7 +31,7 @@ docker run -d --init \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/vscode-server /scripts/sys/init.sh
+    dclong/vscode-server /scripts/sys/init.sh  --switch-user
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
 ```
@@ -49,7 +49,7 @@ docker run -d --init \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/vscode-server:next /scripts/sys/init.sh
+    dclong/vscode-server:next /scripts/sys/init.sh  --switch-user
 ```
 The following command (*only works on Linux*) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -70,7 +70,7 @@ docker run -d --init \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/vscode-server /scripts/sys/init.sh
+    dclong/vscode-server /scripts/sys/init.sh  --switch-user
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/vscode-server).
 ```
@@ -90,7 +90,7 @@ docker run -d --init \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/vscode-server:next /scripts/sys/init.sh
+    dclong/vscode-server:next /scripts/sys/init.sh  --switch-user
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
