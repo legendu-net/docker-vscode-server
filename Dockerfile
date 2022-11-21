@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y valgrind \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension golang.Go \
     && code-server --install-extension njpwerner.autodocstring \
-    && code-server --install-extension matklad.rust-analyzer \
+    && code-server --install-extension rust-lang.rust-analyzer \
     && code-server --install-extension vadimcn.vscode-lldb \
     && code-server --install-extension vscjava.vscode-java-pack \
     && code-server --install-extension fwcd.kotlin \
