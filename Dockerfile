@@ -4,6 +4,7 @@ FROM dclong/jupyterhub-more
 
 RUN pip3 install aiutil \
     && /scripts/sys/purge_cache.sh 
+# && code-server --install-extension vscjava.vscode-java-pack \
 RUN apt-get update && apt-get install -y valgrind \
     && icon from_github -r cdr/code-server -v ">=3.8.0,<4.9.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
@@ -17,7 +18,6 @@ RUN apt-get update && apt-get install -y valgrind \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension rust-lang.rust-analyzer \
     && code-server --install-extension vadimcn.vscode-lldb \
-    && code-server --install-extension vscjava.vscode-java-pack \
     && code-server --install-extension fwcd.kotlin \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
