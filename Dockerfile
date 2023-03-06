@@ -6,7 +6,7 @@ RUN pip3 install aiutil \
     && /scripts/sys/purge_cache.sh 
 # && code-server --install-extension vscjava.vscode-java-pack \
 RUN apt-get update && apt-get install -y valgrind \
-    && icon from_github -r cdr/code-server -v ">=3.8.0,<4.10.0" -k amd64.deb -o /tmp/code.deb \
+    && icon from_github -r cdr/code-server -v ">=3.8.0,<4.11.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     && code-server --install-extension formulahendry.terminal \
     && code-server --install-extension vscodevim.vim@1.20.3 \
