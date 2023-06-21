@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y valgrind \
     && code-server --install-extension golang.Go \
     && code-server --install-extension njpwerner.autodocstring \
     && code-server --install-extension rust-lang.rust-analyzer \
+    && code-server --install-extension serayuzgur.crates \
     && code-server --install-extension vadimcn.vscode-lldb \
     && code-server --install-extension fwcd.kotlin \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
