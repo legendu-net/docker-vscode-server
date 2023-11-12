@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y valgrind \
     && code-server --install-extension vadimcn.vscode-lldb \
     && code-server --install-extension fwcd.kotlin \
     && code-server --install-extension model-checking.kani-vscode-extension \
+    && code-server --install-extension modular-mojotools.vscode-mojo \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
     && icon vscode -c --user-dir /etc/vscode/data/User/ \
