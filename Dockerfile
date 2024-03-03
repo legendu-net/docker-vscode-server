@@ -2,7 +2,7 @@
 FROM dclong/jupyterhub-more
 # GIT: https://github.com/legendu-net/docker-jupyterhub-more.git
 
-RUN pip3 install -U \
+RUN pip3 install -U --break-system-packages \
         aiutil github-rest-api \
     && /scripts/sys/purge_cache.sh 
 # && code-server --install-extension vscjava.vscode-java-pack \
