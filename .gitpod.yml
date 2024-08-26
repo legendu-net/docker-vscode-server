@@ -4,4 +4,4 @@ tasks:
 
 vscode:
   extensions:
-    - vscodevim.vim@1.17.1:9GrHtaCR1xXAlopLzQjIkQ==
+    - asvetliakov.vscode-neovim
