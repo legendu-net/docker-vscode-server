@@ -10,7 +10,8 @@ RUN pip3 install -U --break-system-packages \
 RUN apt-get update && apt-get install -y valgrind \
     && icon from_github -r cdr/code-server -v ">=3.8.0,<4.92.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
-    && code-server --install-extension vscodevim.vim@1.27.2 \
+    #&& code-server --install-extension vscodevim.vim@1.27.2 \
+    && code-server --install-extension asvetliakov.vscode-neovim \
     && code-server --install-extension mechatroner.rainbow-csv \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
