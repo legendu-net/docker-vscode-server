@@ -8,10 +8,10 @@ RUN pip3 install -U --break-system-packages \
     && /scripts/sys/purge_cache.sh 
 # && code-server --install-extension vscjava.vscode-java-pack \
 RUN apt-get update && apt-get install -y valgrind \
-    && icon from_github -r cdr/code-server -v ">=3.8.0,<4.99.0" -k amd64.deb -o /tmp/code.deb \
+    && icon from_github -r cdr/code-server -v ">=4.99.0,<4.105.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     #&& code-server --install-extension vscodevim.vim@1.27.2 \
-    && code-server --install-extension asvetliakov.vscode-neovim@1.18.9 \
+    && code-server --install-extension asvetliakov.vscode-neovim@1.18.24 \
     && code-server --install-extension mechatroner.rainbow-csv \
     && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
