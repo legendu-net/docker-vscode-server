@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y valgrind \
     #&& code-server --install-extension vscodevim.vim@1.27.2 \
     && code-server --install-extension asvetliakov.vscode-neovim@1.18.24 \
     && code-server --install-extension mechatroner.rainbow-csv \
-    && code-server --install-extension bungcip.better-toml \
     && code-server --install-extension usernamehw.errorlens \
     && code-server --install-extension ms-python.python \
     && code-server --install-extension golang.Go \
