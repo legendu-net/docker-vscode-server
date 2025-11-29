@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y valgrind \
     #&& code-server --install-extension modular-mojotools.vscode-mojo \
     #&& code-server --install-extension /scripts/VisualStudioExptTeam.vscodeintellicode-1.2.9.vsix \
     #&& code-server --install-extension visualstudioexptteam.vscodeintellicode \
-    && icon vscode -c --user-dir /etc/vscode/data/User/ \
+    && icon data && icon vscode -c --copy --user-dir /etc/vscode/data/User/ \
     && chmod -R 777 /root/ /etc/vscode/ \
     && /scripts/sys/purge_cache.sh
 COPY scripts/ /scripts/
