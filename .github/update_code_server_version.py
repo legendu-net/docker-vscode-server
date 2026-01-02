@@ -7,6 +7,7 @@
 # ///
 from pathlib import Path
 import re
+import subprocess as sp
 from github_rest_api import Repository
 
 DOCKERFILE = Path(__file__).parent.parent / "Dockerfile"
@@ -14,9 +15,10 @@ DOCKERFILE = Path(__file__).parent.parent / "Dockerfile"
 
 def parse_latest_version() -> str:
     repo = Repository(token="", owner="coder", repo="code-server")
-    #repo = Repository(token="", owner="legendu-net", repo="icon")
+    # repo = Repository(token="", owner="legendu-net", repo="icon")
     release = repo.get_release_latest()
     return release["tag_name"].replace("v", "")
+
 
 def strip_patch_version(version: str):
     parts = version.split(".")
@@ -26,10 +28,14 @@ def strip_patch_version(version: str):
 def push_changes():
     proc = sp.run("git status --porcelain", shell=True, check=True)
     if proc.stdout:
-        sp.run("""git add Dockerfile \
+        sp.run(
+            """git add Dockerfile \
             && git commit -m "update version of code-server" \
             && git push origin dev
-            """".strip(), shell=True, check=True)
+            """.strip(),
+            shell=True,
+            check=True,
+        )
 
 
 def update_version() -> None:
@@ -46,4 +52,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
