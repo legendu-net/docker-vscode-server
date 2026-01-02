@@ -36,6 +36,9 @@ def push_changes():
             shell=True,
             check=True,
         )
+        print("Changes have been committeed and pushed.")
+    else:
+        print("No changes!")
 
 
 def update_version() -> None:
