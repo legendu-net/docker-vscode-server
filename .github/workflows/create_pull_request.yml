@@ -7,7 +7,7 @@ jobs:
   create_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
         with:
           ref: main
       - name: Reset main branch with dev changes
