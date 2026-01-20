@@ -1,24 +1,19 @@
-name: Create Pull Request
+name: Create PR From dev To main
 on:
   push:
     branches:
       - dev
 jobs:
-  create_pull_request:
+  create_pr_dev_to_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: main
-      - name: Reset main branch with dev changes
+      - name: Install uv
         run: |
-          git fetch origin dev:dev
-          git reset --hard dev
-      - name: Create pull request from dev to main
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUBACTIONS }}
-          title: Merge dev into main
-          branch: dev
-          author: dclong <dclong@users.noreply.github.com>
-          assignees: dclong  
+          curl -LsSf https://astral.sh/uv/install.sh | sudo env UV_INSTALL_DIR="/usr/local/bin" sh
+      - name: Create PR From dev To main
+        run: | 
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/create_pull_request.py \
+            | uv run --script - \
+            --head-branch dev \
+            --base-branch main \
+            --token ${{ secrets.GITHUBACTIONS }}
