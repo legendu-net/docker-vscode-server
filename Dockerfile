@@ -6,7 +6,7 @@ RUN pip3 install aiutil github-rest-api \
     && /scripts/sys/purge_cache.sh 
 # && code-server --install-extension vscjava.vscode-java-pack \
 RUN apt-get -y update && apt-get -y install valgrind \
-    && icon from_github -r cdr/code-server -v ">=4.99.0,<4.107.0" -k amd64.deb -o /tmp/code.deb \
+    && icon from_github -r cdr/code-server -v ">=4.99.0,<4.108.0" -k amd64.deb -o /tmp/code.deb \
     && dpkg -i /tmp/code.deb \
     #&& code-server --install-extension vscodevim.vim@1.27.2 \
     && code-server --install-extension google.gemini-cli-vscode-ide-companion \
